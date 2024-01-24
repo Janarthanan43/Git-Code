@@ -1,0 +1,41 @@
+<div class="container mt-4">
+    
+    <h2>Enter Student Details</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input [(ngModel)]="newStudent.name" name="name" type="text" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input [(ngModel)]="newStudent.age" name="age" type="number" class="form-control">
+      </div>
+  
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input [(ngModel)]="newStudent.subject" name="subject" type="text" class="form-control">
+      </div>
+  
+      <button type="button" class="btn btn-primary" (click)="addStudent()">Add Student</button>
+    </form>
+  
+    <h2>Student List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Subject</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of studentDetails; let i = index">
+         <td>{{ student.name }}</td>
+          <td>{{ student.age }}</td>
+          <td>{{ student.subject }}</td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>

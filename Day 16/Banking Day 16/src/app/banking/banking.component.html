@@ -1,0 +1,51 @@
+<div>
+    <mat-form-field>
+      <mat-label>Select Time Period</mat-label>
+      <mat-select [(value)]="selectedTimePeriod" (selectionChange)="updateStatement()">
+        <mat-option *ngFor="let period of timePeriods" [value]="period">{{ period }} days</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  <div>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+  </div>
+  
+  <mat-expansion-panel *ngIf="dataSource.data.length > 0">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Bank Statement
+      </mat-panel-title>
+      <!-- <mat-panel-description>
+        Total Amount: {{ getTotalAmount() | currency }}
+      </mat-panel-description> -->
+    </mat-expansion-panel-header>
+  
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Define columns -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let element">{{ element.amount | currency }}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" matRipple>
+      </tr>
+    </table>
+  
+    <div>
+        <!-- Display total transaction amount in the footer -->
+        <p>Total Amount: {{ getTotalAmount() | currency }}</p>
+      </div>
+  </mat-expansion-panel>
+  

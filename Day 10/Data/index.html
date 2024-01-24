@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+ 
+    th, td {
+      border: 2px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+ 
+    th {
+      background-color: #f3fdfc;
+    }
+  </style>
+</head>
+<body>
+ 
+  <h2 style="background-color: rgba(21, 22, 20, 0.267);">STUDENT DATA FORM</h2>
+ 
+  <form id="studentForm">
+    <label for="StuID">STUDENT ID:</label>
+    <input type="text" id="stuId" name="stuId" required>
+    <br>
+    <br>
+   
+    <label for="stuName">STUDENT NAME:</label>
+    <input type="text" id="stuName" name="stuName" required>
+    <br>
+    <br>
+   
+    <label for="age">STUDENT AGE:</label>
+    <input type="number" id="age" name="age" required>
+    <br>
+    <br>
+   
+ 
+    <button type="button" onclick="submitForm()">SUBMIT</button>
+  </form>
+ 
+  <h2>STUDENT DATA TABLE</h2>
+ 
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>STUDENT ID</th>
+        <th>STUDENT NAME</th>
+        <th>AGE</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+ 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+     
+      fetch('DB.json')
+        .then(response => response.json())
+        .then(data => displayData(data));
+    });
+ 
+    function submitForm() {
+      const stuId = document.getElementById('stuId').value;
+      const stuName = document.getElementById('stuName').value;
+      const age = document.getElementById('age').value;
+ 
+     
+      const tableBody = document.querySelector('#studentTable tbody');
+      const newRow = tableBody.insertRow();
+      newRow.innerHTML = `<td>${stuId}</td><td>${stuName}</td><td>${age}</td><td><button onclick="deleteRow(this)">Delete</button></td>`;
+ 
+     
+      saveDataToDB(stuId, stuName, age);
+ 
+     
+      document.getElementById('stuId').value = '';
+      document.getElementById('stuName').value = '';
+      document.getElementById('age').value = '';
+    }
+ 
+    function saveDataToDB(stuId, stuName, age) {
+     
+      fetch('DB.json')
+        .then(response => response.json())
+        .then(data => {
+         
+          data.push({ stuId, stuName, age });
+ 
+         
+          return fetch('DB.json', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+        });
+    }
+ 
+    function displayData(data) {
+      const tableBody = document.querySelector('#studentTable tbody');
+ 
+     
+      data.forEach(student => {
+        const row = tableBody.insertRow();
+        row.innerHTML = `<td>${student.stuId}</td><td>${student.stuName}</td><td>${student.age}</td><td><button onclick="deleteRow(this)">DELETE</button></td>`;
+      });
+    }
+ 
+    function deleteRow(button) {
+      const row = button.closest('tr');
+      const stuId = row.cells[0].innerText;
+ 
+     
+      row.remove();
+ 
+     
+      fetch('DB.json')
+        .then(response => response.json())
+        .then(data => {
+         
+          const newData = data.filter(student => student.stuId !== stuId);
+ 
+         
+          return fetch('DB.json', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newData)
+          });
+        });
+    }
+  </script>
+ 
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Mayuri",
+      "disease": "Fever",
+      "doc": "Mishra",
+      "stage": "Normal"
+    },
+    {
+      "id": 2,
+      "name": "Vaishnavi",
+      "disease": "Cough",
+      "doc": "Ekke",
+      "stage": "Severe"
+    },
+    {
+      "id": 3,
+      "name": "Roshni Nikam",
+      "disease": "Cold and fever",
+      "doc": "Mane",
+      "stage": "Critical"
+    },
+    {
+      "id": 4,
+      "name": "Manisha",
+      "disease": "Body ache",
+      "doc": "Pawar",
+      "stage": "Normal"
+    },
+    {
+      "id": 5,
+      "name": "",
+      "disease": "",
+      "doc": "",
+      "stage": ""
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

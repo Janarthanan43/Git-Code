@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Rohit",
+      "disease": "Cough",
+      "doc": "Sharma",
+      "stage": "Severe"
+    },
+    {
+      "id": 2,
+      "name": "Roger",
+      "disease": "Cold",
+      "doc": "Federer",
+      "stage": "Critical"
+    },
+    {
+      "id": 3,
+      "name": "Novok",
+      "disease": "Body ache",
+      "doc": "Djokovic",
+      "stage": "Normal"
+    },
+    {
+      "id": 4,
+      "name": "jana",
+      "disease": "fever",
+      "doc": "naveen",
+      "stage": "normal"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

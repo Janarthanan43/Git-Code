@@ -1,0 +1,61 @@
+/* src/app/components/patient/patient.component.css */
+.patient{
+
+  .patient {
+    margin: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #dataEntry {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .patient-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  
+  th {
+    background-color: #f2f2f2;
+  }
+
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  
+   
+  .patient-table th, .patient-table td {
+    border: 10px solid #776d6d;
+    text-align: left;
+    padding: 8px;
+  }
+   
+  .normal-stage {
+    background-color: #8599af; 
+  }
+   
+  .severe-stage {
+    background-color: #b1974b; 
+  }
+   
+  .critical-stage {
+    background-color: #db5cd5; 
+  }
+}
+
+
+
+
+
+
+
+

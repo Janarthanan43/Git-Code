@@ -1,0 +1,29 @@
+/* Style for the input field */
+input {
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+   
+  /* Style for the calculate factorial button */
+  button {
+    background-color: #0af1f1;
+    color: #ba18c069;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+   
+  button:hover {
+    background-color: #d609d6;
+  }
+   
+  /* Style for the result paragraph */
+  p {
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+ 

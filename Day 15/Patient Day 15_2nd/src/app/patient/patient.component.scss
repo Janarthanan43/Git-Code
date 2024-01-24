@@ -1,0 +1,26 @@
+/* src/app/components/patient/patient.component.css */
+.patient{
+  .patient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+   
+  .patient-table th, .patient-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+   
+  .normal-stage {
+    background-color: #aaffaa; /* Light green */
+  }
+   
+  .severe-stage {
+    background-color: #ffcc66; /* Light orange */
+  }
+   
+  .critical-stage {
+    background-color: #ff6666; /* Light red */
+  }
+}

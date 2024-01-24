@@ -1,0 +1,8 @@
+.banking-container { 
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+    border: 10px solid rgb(43, 38, 38);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(167, 211, 7, 0.1);
+  }

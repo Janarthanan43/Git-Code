@@ -1,0 +1,20 @@
+<!-- inverted-pyramid.component.html -->
+<!-- <div *ngFor="let row of rows">
+    <div *ngFor="let col of getNumberArray(row); let j = index">
+      {{ col }}
+    </div>
+  </div> -->
+  
+
+  <!-- inverted-pyramid.component.html -->
+<!-- <div *ngFor="let row of rows; let i = index">
+    <div *ngFor="let col of Array(rows.length - i).fill(0); let j = index">
+      {{ rows.length - j }}
+    </div>
+  </div> -->
+  <!-- inverted-pyramid.component.html -->
+
+<div *ngFor="let row of rows" class="row">
+    <div *ngFor="let num of getNumbers(row)" class="number">{{ num }}</div>
+  </div>
+  

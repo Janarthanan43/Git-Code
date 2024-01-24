@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+   
+  nav {
+    background-color: rgba(184, 169, 169, 0.329);
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+   
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+   
+  router-outlet {
+    margin: 20px;
+  }
+   
+  button {
+    background-color: #914caf;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+   
+  button:hover {
+    background-color: #8b45a0;
+  }

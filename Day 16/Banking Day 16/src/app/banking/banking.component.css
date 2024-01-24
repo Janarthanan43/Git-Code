@@ -1,0 +1,72 @@
+/* Add your global styles here */
+body {
+    font-family: 'Arial', sans-serif; /* Change the font family as needed */
+    background-color: #c5c21ebd; /* Set a background color */
+  }
+  
+  /* Styles for the first <div> containing the mat-form-field */
+  div:first-child {
+    margin-bottom: 15px;
+  }
+  
+  /* Styles for the mat-form-field */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Styles for the mat-expansion-panel */
+  mat-expansion-panel {
+    margin-top: 20px;
+    background-color: rgb(19, 219, 52); /* Set panel background color */
+    border-radius: 8px;
+  }
+  
+  /* Styles for the mat-expansion-panel-header */
+  mat-expansion-panel-header {
+    background-color: #ce18e6c9; /* Set header background color */
+    color: #fff; /* Set header text color */
+    border-radius: 8px;
+  }
+  
+  /* Styles for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  /* Styles for table headers */
+  th {
+    background-color: #3498db; /* Set header background color */
+    color: #fff; /* Set header text color */
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Styles for table cells */
+  td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Styles for the footer containing total transaction amount */
+  div:last-child {
+    margin-top: 20px;
+    text-align: right;
+  }
+  
+  /* Optional: Styles for the filter input */
+  input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  /* Optional: Ripple effect on table rows */
+  tr.mat-row:hover {
+    background-color: #ecf0f1; /* Set hover background color */
+    cursor: pointer;
+  }
+  

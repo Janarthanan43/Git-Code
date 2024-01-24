@@ -1,0 +1,4 @@
+<!-- atm-transaction.component.html -->
+<p>Current Balance: ${{ balance }}</p>
+<input type="number" [(ngModel)]="withdrawalAmount" placeholder="Enter withdrawal amount">
+<button (click)="withdraw(withdrawalAmount)">Withdraw</button>

@@ -1,0 +1,55 @@
+<!-- src/app/components/patient/patient.component.html -->
+<div class="patient">
+<h1>Patient Details</h1>
+ 
+<div id="dataEntry">
+<form #patientForm="ngForm" (ngSubmit)="addPatient()">
+    Patient Name:
+<input name="name" class="form-control" type="text" [(ngModel)]="newPatient.name" required><br>
+ 
+    Disease:
+<input name="disease" class="form-control" type="text" [(ngModel)]="newPatient.disease" required><br>
+ 
+    Doctor:
+<input name="doc" class="form-control" type="text" [(ngModel)]="newPatient.doc" required><br>
+ 
+    Stage:
+<input name="stage" class="form-control" type="text" [(ngModel)]="newPatient.stage" required><br>
+ 
+    <button class="btn btn-success" >Add Patient</button>
+</form>
+ 
+  <hr>
+</div>
+ 
+<div id="dataDisplay">
+<button class="btn btn-info" (click)="getAllPatients()">View All Patients</button>
+ 
+  <table class="patient-table">
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Disease</th>
+<th>Doctor</th>
+<th>Stage</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<!-- <tr *ngFor="let patient of patients" [ngClass]="{'normal-stage': patient.stage === 'normal', 'severe-stage': patient.stage === 'severe', 'critical-stage': patient.stage === 'critical'}"> -->
+    <tr *ngFor="let patient of patients" [class.normal-stage]="patient.stage === 'Normal'" [class.severe-stage]="patient.stage === 'Severe'" [class.critical-stage]="patient.stage === 'Critical'">
+<td>{{ patient.id }}</td>
+<td>{{ patient.name }}</td>
+<td>{{ patient.disease }}</td>
+<td>{{ patient.doc }}</td>
+<td>{{ patient.stage }}</td>
+<td>
+<!-- <button class="btn btn-danger" (click)="deletePatientById(patient.id)">Delete</button> -->
+<button class="btn btn-danger" (click)="deletePatient(patient.id)">Delete</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

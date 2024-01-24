@@ -1,0 +1,16 @@
+.login-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 10px solid rgba(112, 104, 104, 0.856);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+   
+  .error-message {
+    color: rgb(225, 0, 255);
+    margin-top: 10px;
+  }
+
+  .success-message {   color: green;  
+     margin-top: 10px; }
